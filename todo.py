@@ -1,14 +1,14 @@
 import argparse
 import os
 
-FILE = "tasks.txt"
+FILE = "tasks.txt" # change if needed
 
 GREEN = "\033[92m"
 RED = "\033[91m"
 RESET = "\033[0m"
 
 
-# загрузка задач
+# task loader
 def load():
     if not os.path.exists(FILE):
         return []
@@ -16,27 +16,27 @@ def load():
         return [x.strip() for x in f]
 
 
-# сохранение
+# saving
 def save(tasks):
     with open(FILE, "w", encoding="utf-8") as f:
         for t in tasks:
             f.write(t + "\n")
 
 
-# добавить задачу
+# add task
 def add(text):
     tasks = load()
     tasks.append("[ ] " + text)
     save(tasks)
-    print(GREEN + "задача добавлена" + RESET)
+    print(GREEN + "task added" + RESET)
 
 
-# показать список
+# show list
 def show():
     tasks = load()
 
     if not tasks:
-        print("нет задач")
+        print("no tasks")
         return
 
     for i, t in enumerate(tasks, 1):
@@ -46,28 +46,28 @@ def show():
             print(f"{i}. {t}")
 
 
-# отметить выполненной
+# check done
 def done(i):
     tasks = load()
 
     if 1 <= i <= len(tasks):
         tasks[i-1] = tasks[i-1].replace("[ ]", "[x]")
         save(tasks)
-        print(GREEN + "задача выполнена" + RESET)
+        print(GREEN + "task complete" + RESET)
     else:
-        print(RED + "неверный номер" + RESET)
+        print(RED + "wrong number" + RESET)
 
 
-# удалить задачу
+# remove task
 def remove(i):
     tasks = load()
 
     if 1 <= i <= len(tasks):
-        print(RED + "удалено:" + RESET, tasks[i-1])
+        print(RED + "deleted:" + RESET, tasks[i-1])
         tasks.pop(i-1)
         save(tasks)
     else:
-        print("неверный номер")
+        print("wrong number")
 
 
 parser = argparse.ArgumentParser(description="simple todo cli")
