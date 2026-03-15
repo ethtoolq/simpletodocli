@@ -1,71 +1,92 @@
 # Simple To-Do CLI
 
-Простой менеджер задач для терминала, написанный на Python.
+A simple terminal task manager written in Python.
 
-Программа позволяет добавлять задачи, просматривать список задач, отмечать их выполненными и удалять.
+The program allows adding tasks, viewing the task list, marking tasks as done, and removing tasks.
 
-## Возможности
+## Features
 
-- добавление задач
-- просмотр списка задач
-- отметка задач как выполненных
-- удаление задач
+    add tasks
+    view task list
+    mark tasks as done
+    remove tasks
 
-Задачи сохраняются в текстовый файл.
+Tasks are saved to a text file.
 
-## Требования
+## Requirements
 
-- Python 3
+    Python 3
 
-## Использование
+## Usage
 
-Запуск программы:
+Run the program:
 
+
+```
 python3 todo.py
 
-### Добавить задачу
+```
+Add a task
 
-python3 todo.py add "купить молоко"
 
-### Показать список задач
+```
+python3 todo.py add "buy milk"
 
+```
+### Show task list
+
+
+```
 python3 todo.py list
 
-Пример вывода:
+```
+## Example output:
 
-1. [ ] купить молоко
-2. [ ] сделать домашку
-3. [x] прочитать книгу
 
-### Отметить задачу выполненной
+```
+1. [ ] buy milk
+2. [ ] do homework
+3. [x] read a book
 
+```
+### Mark a task as done
+
+
+```
 python3 todo.py done 1
 
-### Удалить задачу
+```
+### Remove a task
 
+
+```
 python3 todo.py remove 2
 
-## Как работает программа
+```
+### How the program works
 
-Все задачи сохраняются в файл:
+All tasks are saved in a file:
 
 tasks.txt
 
-Пример содержимого файла:
+### Example file contents:
 
-[ ] купить молоко
-[x] закончить проект
-[ ] почитать книгу
 
-## Цель проекта
+```
+[ ] buy milk
+[x] finish project
+[ ] read a book
 
-Этот проект был создан для практики:
+```
+## Project purpose
 
-- основ Python
-- работы с argparse
-- работы с файлами
-- создания CLI программ
+This project was created for practice:
 
-## Лицензия
+    Python basics
+    working with argparse
+    working with files
+    creating CLI programs
+
+## License
 
 MIT
